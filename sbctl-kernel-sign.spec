@@ -18,8 +18,6 @@ Designed for Fedora with CachyOS kernel from COPR and sbctl Secure Boot manager.
 %install
 mkdir -p %{buildroot}
 
-%files
-
 %filetriggerpostin -p /bin/bash -- /usr/lib/modules
 if ! command -v sbctl-batch-sign &>/dev/null; then
     echo "sbctl-kernel-sign: sbctl-batch-sign not found, skipping."
@@ -32,6 +30,8 @@ if sbctl-batch-sign; then
 else
     echo "sbctl-kernel-sign: warning: sbctl-batch-sign failed, check manually."
 fi
+
+%files
 
 %changelog
 * Mon Mar 17 2025 hilltty <49129010+hilltty@users.noreply.github.com> - 1.0-1
