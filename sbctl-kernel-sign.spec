@@ -15,9 +15,6 @@ Automatically signs kernel images and EFI binaries via sbctl-batch-sign
 after any kernel package installation using an RPM filetrigger.
 Designed for Fedora with CachyOS kernel from COPR and sbctl Secure Boot manager.
 
-%install
-mkdir -p %{buildroot}
-
 %filetriggerpostin -p /bin/bash -- /usr/lib/modules
 if ! command -v sbctl-batch-sign &>/dev/null; then
     echo "sbctl-kernel-sign: sbctl-batch-sign not found, skipping."
