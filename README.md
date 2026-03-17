@@ -1,7 +1,13 @@
 # sbctl-kernel-sign
 
-RPM filetrigger that automatically signs kernel images and EFI binaries
+kernel-install plugin that automatically signs kernel images and EFI binaries
 via `sbctl-batch-sign` after any kernel installation or update.
+
+## How it works
+
+Installs `/etc/kernel/install.d/91-sbctl.install` which overrides the broken
+default sbctl plugin for CachyOS kernel layout. The plugin is called by
+`kernel-install` via `%posttrans` scriptlet in `kernel-cachyos-core`.
 
 ## Requirements
 
