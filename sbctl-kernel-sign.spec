@@ -1,7 +1,7 @@
 Name:           sbctl-kernel-sign
 Version:        1.0
-Release:        1%{?dist}
-Summary:        RPM filetrigger for automatic kernel signing via sbctl
+Release:        2%{?dist}
+Summary:        kernel-install plugin for automatic kernel signing via sbctl
 License:        MIT
 URL:            https://github.com/hilltty/sbctl-kernel-sign
 
@@ -42,5 +42,7 @@ chmod 755 %{buildroot}/etc/kernel/install.d/91-sbctl.install
 /etc/kernel/install.d/91-sbctl.install
 
 %changelog
+* Tue Mar 17 2026 hilltty <49129010+hilltty@users.noreply.github.com> - 1.0-2
+- Update Summary to reflect kernel-install plugin approach
 * Mon Mar 17 2025 hilltty <49129010+hilltty@users.noreply.github.com> - 1.0-1
 - Initial release
